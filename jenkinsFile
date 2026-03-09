@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Pooja-2-5/myRepo.git'
+            }
+        }
+        stage('Publish') {
+           publishHTML([
+            allowmissing:true,
+            alwaysLinktoLastBuild : false,
+            KeepAll : false,
+            reportDir : '.',
+            reportFiles : 'sort.html',
+            reportName : 'MY HTML PAGE'
+            ])
+            }
+        }
+}
