@@ -10,9 +10,10 @@ pipeline {
         stage('Publish') {
             steps{
            publishHTML([
-            allowmissing:true,
+
+            allowMissing:true,
             alwaysLinktoLastBuild : false,
-            KeepAll : false,
+            KeepAll: false,
             reportDir : '.',
             reportFiles : 'sort.html',
             reportName : 'hii'
