@@ -8,14 +8,16 @@ pipeline {
             }
         }
         stage('Publish') {
+            steps{
            publishHTML([
             allowmissing:true,
             alwaysLinktoLastBuild : false,
             KeepAll : false,
             reportDir : '.',
             reportFiles : 'sort.html',
-            reportName : 'MY HTML PAGE'
+            reportName : 'hii'
             ])
             }
         }
+}
 }
